@@ -24,7 +24,7 @@ windows/amd64 and darwin/amd64.
 
 %build
 cd src
-unset GROOT GOBIN
+unset GOROOT GOBIN
 export GOROOT_FINAL=%{_libdir}/go
 for os in linux darwin windows; do
     for arch in amd64; do
