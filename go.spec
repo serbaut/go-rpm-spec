@@ -1,14 +1,14 @@
-Name:		go
-Version:	1.2
-Release:	1%{?dist}
-Summary:	Go development tools
-Group:		Development/Languages
-License:	BSD
-URL:		http://golang.org
-Source:		https://go.googlecode.com/files/%{name}%{version}.src.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires:	gcc
-AutoReqProv:	no
+Name:           go
+Version:        1.2
+Release:        1%{?dist}
+Summary:        Go development tools
+Group:          Development/Languages
+License:        BSD
+URL:            http://golang.org
+Source:         https://go.googlecode.com/files/%{name}%{version}.src.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires:  gcc
+AutoReqProv:    no
 
 %define __spec_install_post %{nil}
 
