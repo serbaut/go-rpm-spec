@@ -1,5 +1,5 @@
 Name:		go
-Version:	1.1.2
+Version:	1.2
 Release:	1%{?dist}
 Summary:	Go development tools
 Group:		Development/Languages
@@ -38,7 +38,7 @@ rm -rf %{buildroot}
 install -d %{buildroot}%{_libdir}/go
 cp -a pkg src %{buildroot}%{_libdir}/go
 install -d %{buildroot}%{_bindir}
-install -m 755 bin/{go,godoc,gofmt} %{buildroot}%{_bindir}
+install -m 755 bin/{go,gofmt} %{buildroot}%{_bindir}
 install -d %{buildroot}%{_includedir}/go
 cp -a include/* %{buildroot}%{_includedir}/go
 install -d %{buildroot}%{_datadir}/go
