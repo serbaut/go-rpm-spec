@@ -1,6 +1,6 @@
 Name:           go-tools
 Version:        1.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Go development tools
 Group:          Development/Languages
 License:        BSD
@@ -9,6 +9,7 @@ Source:         https://tools.go.googlecode.com
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  go >= %{version}
 AutoReqProv:    no
+Requires:       go >= %{version}
 
 %define __spec_install_post %{nil}
 
