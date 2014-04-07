@@ -1,6 +1,6 @@
 Name:           go-tools
 Version:        1.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Go development tools
 Group:          Development/Languages
 License:        BSD
@@ -26,6 +26,7 @@ go get -d code.google.com/p/go.tools/cmd/godoc code.google.com/p/go.tools/cmd/co
 export GOPATH=$(pwd)/go-tools
 (cd go-tools/src/code.google.com/p/go.tools/cmd/godoc && go build)
 (cd go-tools/src/code.google.com/p/go.tools/cmd/cover && go build)
+(cd go-tools/src/code.google.com/p/go.tools/cmd/vet && go build)
 
 %install
 rm -rf %{buildroot}
@@ -33,6 +34,7 @@ install -d %{buildroot}%{_bindir}
 install -d %{buildroot}%{tooldir}
 install go-tools/src/code.google.com/p/go.tools/cmd/godoc/godoc %{buildroot}%{_bindir}
 install go-tools/src/code.google.com/p/go.tools/cmd/cover/cover %{buildroot}%{tooldir}
+install go-tools/src/code.google.com/p/go.tools/cmd/vet/vet %{buildroot}%{tooldir}
 
 %clean
 rm -rf %{buildroot}
@@ -41,3 +43,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_bindir}/godoc
 %{tooldir}/cover
+%{tooldir}/vet
