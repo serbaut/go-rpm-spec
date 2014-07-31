@@ -1,5 +1,5 @@
 Name:           go-tools
-Version:        1.2
+Version:        1.3
 Release:        3%{?dist}
 Summary:        Go development tools
 Group:          Development/Languages
