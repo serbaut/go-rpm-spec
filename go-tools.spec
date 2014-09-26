@@ -1,11 +1,11 @@
 Name:           go-tools
 Version:        1.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Go development tools
 Group:          Development/Languages
 License:        BSD
 URL:            http://golang.org
-Source:         https://tools.go.googlecode.com
+Source:         http://tools.go.googlecode.com/archive/release-branch.go%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  go >= %{version}
 AutoReqProv:    no
@@ -19,22 +19,22 @@ Requires:       go >= %{version}
 This package includes additional go development tools.
 
 %prep
-export GOPATH=$(pwd)/go-tools
-go get -d code.google.com/p/go.tools/cmd/godoc code.google.com/p/go.tools/cmd/cover
+%setup -T -c -n go/src/code.google.com/p/go.tools
+tar --strip-components=1 -x -f %{SOURCE0}
 
 %build
-export GOPATH=$(pwd)/go-tools
-(cd go-tools/src/code.google.com/p/go.tools/cmd/godoc && go build)
-(cd go-tools/src/code.google.com/p/go.tools/cmd/cover && go build)
-(cd go-tools/src/code.google.com/p/go.tools/cmd/vet && go build)
+export GOPATH=%{_builddir}/go
+(cd cmd/godoc && go build)
+(cd cmd/cover && go build)
+(cd cmd/vet && go build)
 
 %install
 rm -rf %{buildroot}
 install -d %{buildroot}%{_bindir}
 install -d %{buildroot}%{tooldir}
-install go-tools/src/code.google.com/p/go.tools/cmd/godoc/godoc %{buildroot}%{_bindir}
-install go-tools/src/code.google.com/p/go.tools/cmd/cover/cover %{buildroot}%{tooldir}
-install go-tools/src/code.google.com/p/go.tools/cmd/vet/vet %{buildroot}%{tooldir}
+install cmd/godoc/godoc %{buildroot}%{_bindir}
+install cmd/cover/cover %{buildroot}%{tooldir}
+install cmd/vet/vet %{buildroot}%{tooldir}
 
 %clean
 rm -rf %{buildroot}

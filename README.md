@@ -7,3 +7,5 @@ Build with
     rpmdev-setuptree
     spectool -R -g go.spec
     rpmbuild -bb go.spec
+    spectool -R -g go-tools.spec
+    rpmbuild -bb go-tools.spec
