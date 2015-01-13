@@ -1,5 +1,5 @@
 Name:           go
-Version:        1.3.2
+Version:        1.4
 Release:        1%{?dist}
 Summary:        Go development tools
 Group:          Development/Languages
@@ -43,7 +43,6 @@ install -d %{buildroot}%{_includedir}/go
 cp -a include/* %{buildroot}%{_includedir}/go
 install -d %{buildroot}%{_datadir}/go
 cp -a lib misc %{buildroot}%{_datadir}/go
-install -D misc/bash/go %{buildroot}%{_sysconfdir}/bash_completion.d/go
 
 %clean
 rm -rf %{buildroot}
@@ -55,4 +54,3 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_datadir}/go
 %{_includedir}/go
-%{_sysconfdir}/bash_completion.d/go

@@ -1,5 +1,5 @@
 Name:           go-tools
-Version:        1.3
+Version:        1.4
 Release:        4%{?dist}
 Summary:        Go development tools
 Group:          Development/Languages
@@ -19,7 +19,7 @@ Requires:       go >= %{version}
 This package includes additional go development tools.
 
 %prep
-%setup -T -c -n go/src/code.google.com/p/go.tools
+%setup -T -c -n go/src/golang.org/x/tools
 tar --strip-components=1 -x -f %{SOURCE0}
 
 %build
