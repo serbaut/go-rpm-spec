@@ -10,6 +10,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  gcc
 AutoReqProv:    no
 
+%define debug_package %{nil}
+
 %define __spec_install_post %{nil}
 %define debug_package %{nil}
 
