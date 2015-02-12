@@ -11,6 +11,7 @@ BuildRequires:  gcc
 AutoReqProv:    no
 
 %define __spec_install_post %{nil}
+%define debug_package %{nil}
 
 %description
 Go is an open source programming environment that makes
